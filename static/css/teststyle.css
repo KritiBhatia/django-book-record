@@ -1,0 +1,30 @@
+body{
+  background: url('../images/Kriti.jpg');
+  background-repeat: no-repeat;
+  background-size:  300px 300px;
+  background-position: center;
+
+}
+.heading{
+  color:rgba(255, 0, 100, 0.5);
+  background-color: #0f0;
+}
+.heading h1{
+  padding: 5px 5px 5px 10px ;
+}
+.questionblock{
+  width: 30%;
+  border-style: solid;
+  border-width: thin;
+}
+.submit{
+  padding: 10px;
+  width: 200px !important;
+}
+.que{
+  padding: 10px;
+  color: navy;
+}
+.options{
+  color: blue;
+}
