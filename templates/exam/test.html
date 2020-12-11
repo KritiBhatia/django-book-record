@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+ <head>
+   <<title>Test</title>
+   <link rel="stylesheet" href="{% static 'css/teststyle.css' %}">
+ </head>
+ <body>
+   <div class='heading'>
+   <h1>Hello, Guest</h1>
+ </div>
+
+ <div class="questionblock">
+   <div class="que">
+<h2>{{que}}</h2>
+{% if level %} <!--if variable 'level' is defined then print its value-->
+{{level}}
+{% else %}
+Level not defined
+{% endif %}
+ </div>
+   <div class="options">
+   <input type="radio" name="answer"> <span>{{a}}</span>
+ </div>
+ <div class="options">
+   <input type="radio" name="answer"> <span>{{b}}</span>
+ </div>
+ <div class="options">
+   <input type="radio" name="answer" ><span>{{c}}</span>
+ </div>
+ <div class="options">
+   <input type="radio" name="answer" ><span>{{d}}</span>
+   </div>
+   <div class="submit">
+   <input type="submit" name="submit" value="submit">
+ </div>
+</div>
+{% lorem %}
+ </body>
+</html>

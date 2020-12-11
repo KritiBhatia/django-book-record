@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> About Page</title>
+  </head>
+  <body>
+    {% load app_tags %}
+    {% get_date as gd %}
+    <p>This is an about page</p>
+    <h2>{{msg|quotes}}</h2>
+    <h1>Today is {% get_date %} </h1>
+    Today is {{gd}} <br>
+    Today is {{gd|date:"D"}} <br>
+    Today is {{gd|date:"d m y"}} <br>
+    Today is {{gd|date:"D M Y"}} <br>
+    Today is {{gd|date:"D,M,Y"}} <br>
+    Today is {{gd|date:"y m d"}} <br>
+    Today is {{gd|date:"Y, M d"}} <br>
+    {{msg}}
+    <h2>Above text contains {{msg|wordcount}} words</h2>
+    {{msg|upper}} <br>
+    {{msg|lower}}<br>
+    {{msg|capfirst}}<br>
+    {{L1}}<br>
+    {{L1|first}}<br>
+    {{L1|last}}<br>
+    {{L1|length}}<br>
+    {{num|divisibleby:"3"}}<br>
+    {{num|divisibleby:"2"}}
+  </body>
+</html>

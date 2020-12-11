@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Search Book Record</title>
+    <link rel="stylesheet" href="{% static 'css/DBRstyle.css' %}">
+  </head>
+  <body>
+    <div id="header">
+      <h1> Django Book Record </h1>
+      <div id="nav">
+        <a href="/DBRapp/view-books">View All</a>
+        <a href="/DBRapp/new-books">Add New</a>
+        <a href="/DBRapp/search-books">Search</a>
+        <a href="/DBRapp/logout">Logout</a>
+     </div>
+   </div>
+   <div id="main">
+  <h2>Search Book Record</h2>
+  <form action="DBRapp/search" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Search">
+
+  </form>
+  {% if books %}
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Author</th>
+      <th>Publisher</th>
+    </thead>
+  {% endif %}
+  {% for book in books %}
+  <tr>
+    <td>{{book.title}}</td>
+    <td>{{book.price}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.publisher}}</td>
+  </tr>
+  {% endfor %}
+  </table>
+
+   </div>
+  </body>
+</html>

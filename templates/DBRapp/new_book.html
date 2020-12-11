@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Book Form</title>
+    <link rel="stylesheet" href="{% static 'css/DBRstyle.css' %}">
+  </head>
+  <body>
+     <div id="header">
+       <h1> Django Book Record </h1>
+       <div id="nav">
+         <a href="/DBRapp/view-books">View All</a>
+         <a href="/DBRapp/new-books">Add New</a>
+         <a href="/DBRapp/search-books">Search</a>
+         <a href="/DBRapp/logout">Logout</a>
+      </div>
+    </div>
+    <div id="main">
+      <h2>Add New Book Record</h2>
+      <form action= "/DBRapp/add" method='post'>
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Add">
+     </form>
+
+    </div>
+  </body>
+</html>
